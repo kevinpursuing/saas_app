@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom'
 import "react-jinke-music-player/assets/index.css"
 import "video-react/dist/video-react.css";
 
-import AudioPlayer from './config/AudioPlayer'
-import { Player } from 'video-react';
+// import AudioPlayer from './config/AudioPlayer'
+// import { Player } from 'video-react';
 import { getRes, changeResId, changeApp } from './redux/app.redux.js'
 
 const styles = theme => ({
@@ -102,9 +102,9 @@ class Res extends Component {
                     </Paper>
                     :
                     <Paper className={classes.resVideoCover} elevation={5}>
-                        <Player classesName={classes.videoBox}>
+                        <video width="320" height="200" controls="controls">
                             <source src={App.res.videoSrc} />
-                        </Player>
+                        </video>
                     </Paper>
                 }
 
@@ -115,7 +115,7 @@ class Res extends Component {
                     <Divider />
                     <Typography className={classes.buyNum}>本内容需要付费后才能阅读全文</Typography>
                     {App.res.audioSrc === '' ? null : console.log(App.res.audioSrc)}
-                    {App.res.audioSrc === '' ? null : <AudioPlayer playInfo={App.res}></AudioPlayer>}
+                    {App.res.audioSrc === '' ? null : <embed height="100" width="100" src={App.res.audioSrc} />}
 
                 </div>
                 <Paper className={classes.buyBox} elevation={3}>
