@@ -32,7 +32,10 @@ class AuthRoute extends Component {
         }
         console.log(uId)
         if (uId) {   //若是有uId
-
+            axios.get('/api/wechat/getUserInfo?&appId=' + appId)
+                .then(res => {
+                    console.log(res)
+                })
         } else {   //若是没有uId
             //判断有没有code
             if (!code) {
