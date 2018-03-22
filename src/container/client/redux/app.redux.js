@@ -9,6 +9,9 @@ let initState = {
     appId: '',
     resId: '',
     resList: [],
+    openId: '',
+    avatar: '',
+    nickName: '',
     res: {
         name: '',  //资源名称
         intro: '',  //资源简介
@@ -83,4 +86,9 @@ export function getRes(appId, resId) {
                 }
             })
     }
+}
+
+// 对进来用户进行验证
+export function UserEnter(code) {
+
 }

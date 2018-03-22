@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {
-    Route, Router
+    Route
 } from 'react-router-dom'
 
 import { withStyles } from 'material-ui/styles';

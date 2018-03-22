@@ -11,6 +11,7 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 import reducer from './reducer'
 
+import AuthRoute from './container/client/component/AuthRoute'
 import Client from './container/client/client'
 
 import './index.css'
@@ -33,9 +34,12 @@ class App extends Component {
       <Provider store={store}>
         <MuiThemeProvider theme={theme}>
           <BrowserRouter>
-            <Switch>
-              <Route path='/app' component={Client}></Route>
-            </Switch>
+            <div>
+              <AuthRoute></AuthRoute>
+              <Switch>
+                <Route path='/app' component={Client}></Route>
+              </Switch>
+            </div>
           </BrowserRouter>
         </MuiThemeProvider>
       </Provider>
